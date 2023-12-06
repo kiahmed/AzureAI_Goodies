@@ -27,3 +27,8 @@ jsonCopy code
     ]
 }
 
+
+// In this pipeline, the **`AzureMLBatchExecution`** activity is configured to invoke the Azure Machine Learning web service with input data from your dataset and store the predictions in the specified output column.
+
+// Note: This is a simplified example, and you may need to adapt it based on your specific use case and requirements. Make sure to replace placeholder names with your actual names and configure the settings accordingly. Additionally, keep in mind that you need to have the necessary permissions and resources set up in both Azure Machine Learning and Azure Data Factory.
+
