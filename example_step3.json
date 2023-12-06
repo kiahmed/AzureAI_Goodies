@@ -1,0 +1,29 @@
+// **Step 3: Use the Model in Azure Data Factory Pipeline**
+
+// Now, you can use the deployed model in an Azure Data Factory pipeline for making predictions.
+
+jsonCopy code
+{
+    "name": "YourPipeline",
+    "activities": [
+        {
+            "name": "InvokeAzureML",
+            "type": "AzureMLBatchExecution",
+            "linkedServiceName": {
+                "referenceName": "yourAzureMLLinkedService",
+                "type": "LinkedServiceReference"
+            },
+            "typeProperties": {
+                "webServiceInputs": {
+                    "YourInputColumnName1": "InputDatasetColumn1",
+                    "YourInputColumnName2": "InputDatasetColumn2"
+                },
+                "webServiceOutputs": {
+                    "YourOutputColumnName": "OutputDatasetColumn"
+                },
+                "batchSize": 10
+            }
+        }
+    ]
+}
+
