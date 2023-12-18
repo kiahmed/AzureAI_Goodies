@@ -1,0 +1,23 @@
+{
+    "name": "YourPipeline",
+    "activities": [
+        {
+            "name": "InvokeAzureML",
+            "type": "AzureMLBatchExecution",
+            "linkedServiceName": {
+                "referenceName": "yourAzureMLLinkedService",
+                "type": "LinkedServiceReference"
+            },
+            "typeProperties": {
+                "webServiceInputs": {
+                    "YourInputColumnName1": "InputDatasetColumn1",
+                    "YourInputColumnName2": "InputDatasetColumn2"
+                },
+                "webServiceOutputs": {
+                    "YourOutputColumnName": "OutputDatasetColumn"
+                },
+                "batchSize": 10
+            }
+        }
+    ]
+}
