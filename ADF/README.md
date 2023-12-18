@@ -64,6 +64,17 @@ This repository demonstrates the integration of Azure Machine Learning (Azure ML
 ### Integrating with ADF
 
 1. Configure your ADF pipeline using the pseudocode provided in the `adf_pipeline.json` file.
+```json
+    "name": "YourPipeline",
+    "activities": [
+        {
+            "name": "InvokeAzureML",
+            "type": "AzureMLBatchExecution",
+            "linkedServiceName": {
+                "referenceName": "yourAzureMLLinkedService",
+                "type": "LinkedServiceReference"
+            }
+```
 2. Ensure that the necessary permissions and linked services are set up.
 3. Run the ADF pipeline to invoke the Azure ML web service within your data workflow.
 
