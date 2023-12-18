@@ -85,6 +85,10 @@ This repository demonstrates the integration of Azure Machine Learning (Azure ML
   - `deploy_model.py`: Script for deploying the trained model as a web service.
 - `adf_pipeline.json`: ADF pipeline pseudocode for integrating the Azure ML web service into data workflows.
 
+## Sample Flow Chart
+![ADD AML](/azure_ml/blob/aml-adf.png?raw=true)
+
+
 ## Contributing
 
 Feel free to contribute to enhance and expand the functionality of this repository. Follow the [contributing guidelines](CONTRIBUTING.md).
