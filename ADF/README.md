@@ -17,10 +17,21 @@ This repository demonstrates the integration of Azure Machine Learning (Azure ML
 1. Open the `train_model.py` script in the `azure_ml` folder.
 2. Configure Azure ML workspace connection in the script.
 ```python
-    # Azure ML Model Deployment Script
-	from azureml.core.model import Model
-	from azureml.core.webservice import AciWebservice, Webservice
-	from azureml.core.conda_dependencies import CondaDependencies
+    # Python code to train a machine learning model using Azure Machine Learning
+
+	from azureml.core import Workspace, Experiment, Dataset
+	from azureml.train import automl
+
+	# Connect to Azure Machine Learning workspace
+	ws = Workspace.from_config()
+
+	# Load dataset
+	dataset = Dataset.get_by_name(ws, name='your_dataset_name')
+	train_data = dataset.drop_columns(columns=['target_column'])
+	label_column = 'target_column'
+
+	# Create an experiment
+	experiment = Experiment(workspace=ws, name='your_experiment_name')
 ```
 
 3. Adjust dataset names, labels, and AutoML settings.
