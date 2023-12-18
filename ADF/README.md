@@ -41,6 +41,24 @@ This repository demonstrates the integration of Azure Machine Learning (Azure ML
 
 1. Open the `deploy_model.py` script in the `azure_ml` folder.
 2. Update the model registration details and deployment configuration.
+```python
+    # Deploy the best model as a web service
+	from azureml.core.model import Model
+	from azureml.core.webservice import AciWebservice, Webservice
+	from azureml.core.conda_dependencies import CondaDependencies
+
+	# Register the model
+	model = run.register_model(description='Best AutoML model')
+
+	# Create a deployment configuration
+	aciconfig = AciWebservice.deploy_configuration(cpu_cores=1, memory_gb=1)
+
+	# Define dependencies required by the scoring script
+	myenv = CondaDependencies.create(conda_packages=['scikit-learn'])
+
+	# Set runtime to Python
+	myenv.python.conda_dependencies = ['python=3.6.2']
+```
 3. Execute the script to deploy the model as a web service.
 
 ### Integrating with ADF
