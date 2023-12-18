@@ -86,7 +86,7 @@ This repository demonstrates the integration of Azure Machine Learning (Azure ML
 - `adf_pipeline.json`: ADF pipeline pseudocode for integrating the Azure ML web service into data workflows.
 
 ## Sample Flow Chart
-![](/azure_ml/blob/aml-adf.png)
+![](/azure_ml/blob/aml-adf.png?raw=true)
 
 
 ## Contributing
